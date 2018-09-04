@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./report_materials/classes_histogram.png "Histogram of classes"
 [image2]: ./report_materials/initial_image.png "Initial image"
-[image3]: ./report_materials/normalized_image.jpg "Normalized image"
+[image3]: ./report_materials/normalized_image.png "Normalized image"
 [image4]: ./report_materials/placeholder.png "Traffic Sign 1"
 [image5]: ./report_materials/placeholder.png "Traffic Sign 2"
 [image6]: ./report_materials/placeholder.png "Traffic Sign 3"
