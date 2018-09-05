@@ -12173,9 +12173,7 @@ Image data shape = (32, 32, 3)
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1">#Normalize data</span>
-<span class="c1">#for data in X_train:</span>
-<span class="c1">#    data = cv2.cvtColor(data, cv2.COLOR_RGB2GRAY)</span>
+<span class="c1">### GRAYSCALE ###</span>
 
 <span class="n">X_train_rgb</span> <span class="o">=</span> <span class="n">X_train</span>
 <span class="n">X_train_gray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X_train</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12362,12 +12360,6 @@ Image data shape = (32, 32, 1)
     
     <span class="c1"># SOLUTION: Activation.</span>
     <span class="n">conv2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">conv2</span><span class="p">)</span>
-    
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    # Doesn&#39;t work so well</span>
-<span class="sd">    # SOLUTION: DROPOUT</span>
-<span class="sd">    #conv2 = tf.nn.dropout(conv2, keep_prob)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
         
     <span class="c1"># SOLUTION: Pooling. Input = 10x10x16. Output = 5x5x16.</span>
     <span class="n">conv2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">max_pool</span><span class="p">(</span><span class="n">conv2</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;VALID&#39;</span><span class="p">)</span>
@@ -13018,6 +13010,7 @@ TopKV2(values=array([[  9.96542275e-01,   3.45774367e-03,   2.65441606e-08,
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted image: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">img_nr</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2"> Softmax: </span><span class="si">{:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">img_nr</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
+    
 </pre></div>
 
 </div>
