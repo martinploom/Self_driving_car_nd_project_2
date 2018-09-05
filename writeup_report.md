@@ -198,7 +198,7 @@ Here are the results of the prediction:
 | No passing								| No passing									|
 
 
-The model was able to correctly guess 6 of the 8 traffic signs, which gives an accuracy of 75%. This doesn't compares favorably 
+The model was able to correctly guess 6 of the 8 traffic signs, which gives an accuracy of 75%. This doesn't compare favorably 
 to the accuracy on the test set, but as there were only 8 images a results are easy to not match up as the test set was ~12 000 
 images large and the result can stabilize and couple of pictures can't affect the result so much as they can if there are only 
 8 images in total.
@@ -208,8 +208,8 @@ images large and the result can stabilize and couple of pictures can't affect th
 The code for making predictions on my final model is located under the "Output Top 5 Softmax Probabilities For Each Image Found on the Web"
 section of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a 30 kmh speed limit (probability of 0.997), but the image does contains a 
-20 kmh speed limit sign. This images was selected on purpose as from the training set it can be seen that the 20 kmh sign has very few examples 
+For the first image, the model is relatively sure that this is a 30 kmh speed limit (probability of 0.997), but the image contains a 
+20 kmh speed limit sign. This image was selected on purpose as from the training set it can be seen that the 20 kmh sign has very few examples 
 and I didn't augment data to even out these to see how the model behaves like this. 
 
 The top five soft max probabilities were
@@ -316,7 +316,8 @@ The top five soft max probabilities were
 | .000	      			| Ahead only				 					|
 | .000				    | End of no passing					 			|
 
-
+All in all the model behaved pretty well, but the probabilities seem a bit too high. I was expecting to have probabilities spread out between 
+the top five, but mostly the 1st selection has a very high score and others are close to 0.
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
