@@ -159,11 +159,14 @@ LeNet architecture was chosen.
 
 * Why did you believe it would be relevant to the traffic sign application?
 
-
+The LeNet was the first successful convolutional network regarding image classification and it is a good simple platform to build on. Other 
+wellknown networks have been built based on LeNet as well, such as AlexNet.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
-
+All in all I'd say that the model is working pretty well. The training and validation set accuracies are good and throughout 
+the epochs they are both rising which indicates that the model is training well and not under or over fitting the dataset. The test set accuracy 
+is a bit lower, but not by much.
  
 
 ### Test a Model on New Images
@@ -175,7 +178,9 @@ Here are eight German traffic signs that I found on the web:
 ![alt text][image5] 
 
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because it has so few images in the dataset and network might be biased not to detect it.
+ On the other hand the 4th image (30 kmh speed limit) sign is well reprsented in the dataset. The rest of the images are somewhat in 
+ the middle.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
