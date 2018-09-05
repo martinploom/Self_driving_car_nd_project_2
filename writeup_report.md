@@ -117,8 +117,10 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+
 First was LeNet. The accuracy on the validation set was ~88%.
 * What were some problems with the initial architecture?
+
 The initial architecture was underfitting the data.
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
@@ -184,7 +186,7 @@ Here are the results of the prediction:
 | Speed limit (20 kmh)      				| Speed limit (30 kmh)   						| 
 | Right-of-way at the next intersection  	| Right-of-way at the next intersection 		|
 | No entry									| No entry										|
-| Speed limit(30 kmh)	      				| Speed limit(30 kmh)					 		|
+| Speed limit (30 kmh)	      				| Speed limit (30 kmh)					 		|
 | Road work									| Beware of ice/snow      						|
 | Ahead only								| Ahead only									|
 | Speed limit (100 kmh)						| Speed limit (100 kmh)							|
@@ -216,20 +218,20 @@ The top five soft max probabilities were
 | .000				    | Right-of-way at the next intersection 		|
 
 
-For the second image, the model is sure that this is a Right-of-way at the next intersection (probability of 1.0), and the image does contains a 
+For the second image, the model is sure that this is a Right-of-way at the next intersection (probability of 1.0), and the image does contain a 
 Right-of-way at the next intersection sign.
 
 The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.0         			| Right-of-way at the next intersection  		| 
-| .0     				| Beware of ice/snow 							|
-| .0					| Pedestrians									|
-| .0	      			| Double curve				 					|
-| .0				    | Roundabout mandatory					 		|
+| 1.000        			| Right-of-way at the next intersection  		| 
+| .000     				| Beware of ice/snow 							|
+| .000					| Pedestrians									|
+| .000	      			| Double curve				 					|
+| .000				    | Roundabout mandatory					 		|
 
-For the third image, the model is relatively sure that this is a No entry (probability of 0.804), and the image does contains 
+For the third image, the model is relatively sure that this is a No entry (probability of 0.804), and the image does contain 
 that sign.
 
 The top five soft max probabilities were
@@ -239,23 +241,75 @@ The top five soft max probabilities were
 | .804         			| No entry								  		| 
 | .164     				| Priority road 								|
 | .032					| No passing									|
-| .0	      			| End of no passing				 				|
-| .0				    | Ahead only							 		|
+| .000	      			| End of no passing				 				|
+| .000				    | Ahead only							 		|
 
-For the fourth image, the model is sure that this is a 30 kmh speed limit (probability of 1.0), and the image does contains 
+For the fourth image, the model is sure that this is a 30 kmh speed limit (probability of 1.0), and the image does contain 
 that sign.
 
 The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.0         			| Speed limit (30km/h)  						| 
-| .0     				| Speed limit (20km/h)							|
-| .0					| End of speed limit (80km/h)					|
-| .0	      			| Speed limit (70km/h)				 			|
-| .0				    | Speed limit (80km/h)					 		|
+| 1.000        			| Speed limit (30km/h)  						| 
+| .000     				| Speed limit (20km/h)							|
+| .000					| End of speed limit (80km/h)					|
+| .000	      			| Speed limit (70km/h)				 			|
+| .000				    | Speed limit (80km/h)					 		|
 
+For the fifth image, the model is quite sure that this is a Beware of ice/snow (probability of .973), but the image contains 
+Road work sign. It is a bit weird as the Road work sign is pretty well represented in the dataset and on the other hand the 
+Beware of the ice/snow is not so well represented so it might be the fact that they both have triangular shape and some object
+in the middle of it that confused the model.
 
+The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .973        			| Beware of ice/snow  							| 
+| .026     				| Right-of-way at the next intersection			|
+| .001					| End of no passing								|
+| .000	      			| Slippery road				 					|
+| .000				    | Dangerous curve to the right					|
+
+For the sixth image, the model is sure that this is a Ahead only (probability of 1.0), and the image does contain 
+that sign.
+
+The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.000        			| Ahead only  									| 
+| .000     				| Go straight or right							|
+| .000					| Yield											|
+| .000	      			| No passing						 			|
+| .000				    | Speed limit (60km/h)					 		|
+
+For the seventh image, the model is sure that this is a 100 kmh speed limit (probability of .998), and the image does contain 
+that sign.
+
+The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .998        			| Speed limit (100km/h)  						| 
+| .002     				| No passing for vehicles over 3.5 metric tons	|
+| .000					| Speed limit (80km/h)							|
+| .000	      			| Speed limit (120km/h)				 			|
+| .000				    | Vehicles over 3.5 metric tons prohibited 		|
+
+For the eighth image, the model is sure that this is a No passing (probability of 1.0), and the image does contain 
+that sign.
+
+The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.000        			| No passing  									| 
+| .000     				| Vehicles over 3.5 metric tons prohibited		|
+| .000					| No passing for vehicles over 3.5 metric tons	|
+| .000	      			| Ahead only				 					|
+| .000				    | End of no passing					 			|
 
 
 
