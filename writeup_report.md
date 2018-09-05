@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image1]: ./report_materials/classes_histogram.png "Histogram of classes"
 [image2]: ./report_materials/initial_image.png "Initial image"
 [image3]: ./report_materials/normalized_image.png "Normalized image"
-[image4]: ./report_materials/placeholder.png "Traffic Sign 1"
+[image4]: ./report_materials/new_images.png "Traffic signes downloaded from the internet"
 [image5]: ./report_materials/placeholder.png "Traffic Sign 2"
 [image6]: ./report_materials/placeholder.png "Traffic Sign 3"
 [image7]: ./report_materials/placeholder.png "Traffic Sign 4"
@@ -95,18 +95,35 @@ My final model consisted of the following layers:
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
+Optimizer: 
+Batch size:
+Number of epochs:
+Hyperparameter, such as learning rate:
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 99.1%
+* validation set accuracy of 96.1% 
+* test set accuracy of 93.0%
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+First was LeNet. The result was ...
 * What were some problems with the initial architecture?
+ToDo
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+Initial accuracy with pure LeNet was ~88 %
+First normalization ~90 % accuracy
+Grayscale gave ~90.5 %
+The tried flipping images, didn't give any result
+Tried dropout before last layer, result ~93.5 %
+Then increased epochs number to 15 and added monitoring for training accuracy and saw that training acc kept rising, but valid started fluctuating so the model was overfitting. Added another dropout and got better behaviour and result 95.2%
+changed batch size to 64 ... and the result is 95.8% and the valid and train acc kept rising in general with minor fluctuations in the middle
+Changed learning rate to 0.0009 and the results weren't so good - 94.6%
+Changed learning rate to 0.0011 and the result is 95.8 with fluctuating in the middle which indicates a bit for overfitting
+Going back to learning rate 0.001 and achieved 96.1% accuracy and the training and validation set kept increasing simultanously
+
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
@@ -120,9 +137,16 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are eight German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
+![alt text][image4] 
+
+
+
+
+
+
+![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
 The first image might be difficult to classify because ...
