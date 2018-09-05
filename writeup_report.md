@@ -22,8 +22,8 @@ The goals / steps of this project are the following:
 [image1]: ./report_materials/classes_histogram.png "Histogram of classes"
 [image2]: ./report_materials/initial_image.png "Initial image"
 [image3]: ./report_materials/normalized_image.png "Normalized image"
-[image4]: ./report_materials/new_images.png "Traffic signes downloaded from the internet"
-[image5]: ./report_materials/placeholder.png "Traffic Sign 2"
+[image4]: ./report_materials/gray_image.png "Grayscale image"
+[image5]: ./report_materials/new_images.png "Traffic signes downloaded from the internet"
 [image6]: ./report_materials/placeholder.png "Traffic Sign 3"
 [image7]: ./report_materials/placeholder.png "Traffic Sign 4"
 [image8]: ./report_materials/placeholder.png "Traffic Sign 5"
@@ -63,9 +63,17 @@ Here is an exploratory visualization of the data set. It is a histogram showing 
 
 As a first step, I decided to normalize and mean center the image data. To do so I subtracted 128 from the RGB values and then divided the result by 128 to get values in the range of -1 to 1.
 
-Here is an example of a traffic sign image before and after normalizing.
+Here is an example of a traffic sign image before 
 
-![alt text][image2] ![alt text][image3]
+![alt text][image2] 
+
+and after normalizing ...
+
+![alt text][image3] 
+
+After normalizing to improve the results even futher I decided to convert the image to grayscale.
+
+![alt text][image4]
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -84,6 +92,7 @@ My final model consisted of the following layers:
 | Flatten					| Output 400									|
 | Fully connected			| Output 120									|
 | RELU						|												|
+| Dropout					| Keep probability 0.5							|
 | Fully connected			| Output 84										|
 | RELU						|												|
 | Dropout					| Keep probability 0.5							|
@@ -139,7 +148,7 @@ If a well known architecture was chosen:
 
 Here are eight German traffic signs that I found on the web:
 
-![alt text][image4] 
+![alt text][image5] 
 
 
 
